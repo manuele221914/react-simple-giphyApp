@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    font-family: 'Anton', sans-serif;
+  }
+body {
+    background: #0e1218;
+    color: #ffffff;
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    flex-wrap: wrap;
+    justify-content: stretch;
+}
+
+/*Search bar and input field css*/
+.search-container {
+    width: 100%;
+    grid-template-columns: auto min-content;
+    margin: auto auto 4vh auto;
+}
+.search-container span {
+      color:red;
+}
+.input-field {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #808080;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+/*Paginator */
+.paginator-list{
+    display: flex;
+    justify-content: left;
+   
+}
+.paginator-item{
+    background-color: rgb(19, 209, 235);
+    list-style: none;
+    text-decoration: none;
+}
+.paginator-item a{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+/*Active class for paginator*/
+.active {
+    color:white;
+    background-color: rgb(10, 130, 146);
+}
+/*Dog and cat buttons style*/
+.btn {
+    background-color: rgb(19, 209, 235);
+    color: #fff;
+    padding: 6px 30px;
+    vertical-align: middle;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+.btn:hover, .paginator-item:hover {
+    background-color: rgb(10, 130, 146);
+}
+
+/*grid for all the gifs of Gifs component and responsive css for differente windows size*/
+.grid-gallery {
+    display: grid;
+    grid-template-rows: 40vh 30vh 30vh;
+    grid-gap: 1rem;
+    grid-auto-flow: row dense;
+  }
+  /*Responsive, change grid position depends on view width*/
+  @media all and (min-width: 320px) {
+    .grid-gallery {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+  @media all and (min-width: 768px) {
+    .grid-gallery {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media all and (min-width: 1024px) {
+    .grid-gallery {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  /* This help to fit all the 25 elements in a more aesthetic way */
+  .grid-gallery__item:nth-child(11n+1) {
+    grid-column: span 1;
+  }
+  
+  .grid-gallery__item:nth-child(11n+4) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  
+  .grid-gallery__item:nth-child(11n+6) {
+    grid-column: span 3;
+    grid-row: span 1;
+  }
+  
+  .grid-gallery__item:nth-child(11n+7) {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  
+  .grid-gallery__item:nth-child(11n+8) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
+  .grid-gallery__item:nth-child(11n+9) {
+    grid-row: span 3;
+  }
+  
+  .grid-gallery__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
